@@ -8,7 +8,11 @@ namespace Single
     {
         static void Main(string[] args)
         {
-
+            var customer = new Customer
+            {
+                Name = "Angel",
+                LastName = "Javier"
+            };
             var cheese = new Product
             {
                 Description = "Cheese",
@@ -26,13 +30,9 @@ namespace Single
             };
             var invoice = new Invoice
             {
-                Customer = new Customer
-                {
-                    Name = "Angel",
-                    LastName = "Javier"
-                },
                 Id = 1,
                 Date = DateTime.Now,
+                Customer = customer,
                 Items = new List<Item>
                 {
                     new Item
