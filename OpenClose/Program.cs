@@ -7,26 +7,26 @@ namespace OpenClose
     {
         static void Main(string[] args)
         {
-            AccountingDocument invoice = new AccountingDocument
+            AccountingDocument invoice = new Invoice
             {
                 Id = 9721,
                 Amount = 1536.45m,
                 Date = DateTime.Now,
-                AccountingDocumentType = AccountingDocumentType.Invoice
+                //AccountingDocumentType = AccountingDocumentType.Invoice
             };
-            AccountingDocument creditNote = new AccountingDocument
+            AccountingDocument creditNote = new CreditNote
             {
                 Id = 9812,
                 Amount = 4917.99m,
                 Date = DateTime.Now,
-                AccountingDocumentType = AccountingDocumentType.CreditNote
+                //AccountingDocumentType = AccountingDocumentType.CreditNote
             };
-            AccountingDocument debitNote = new AccountingDocument
+            AccountingDocument debitNote = new DebitNote
             {
                 Id = 7736,
                 Amount = 4917.99m,
                 Date = DateTime.Now,
-                AccountingDocumentType = AccountingDocumentType.DebitNote
+                //AccountingDocumentType = AccountingDocumentType.DebitNote
             };
             ShowDocument(invoice);
             ShowDocument(creditNote);
@@ -39,7 +39,7 @@ namespace OpenClose
             Console.WriteLine($"Id: {document.GetDescription()}");
             Console.WriteLine($"Amount: {document.Amount:c}");
             Console.WriteLine($"Date: {document.Date.ToString("dd-MM-yyyy hh:mm:ss")}");
-            Console.WriteLine($"Type: {document.AccountingDocumentType}");
+            Console.WriteLine($"Type: {document.GetType()}");
             Console.WriteLine("----------------------------");
         }
     }

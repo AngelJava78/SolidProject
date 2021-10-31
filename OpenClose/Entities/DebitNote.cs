@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace OpenClose.Entities
 {
-    public sealed class CreditNote : AccountingDocument
+    public sealed class DebitNote : AccountingDocument
     {
         public override string GetDescription()
         {
-            return $"CN-{Id.ToString().PadLeft(5, '0')}";
+            return $"DN-{Id.ToString().PadLeft(8, '0')}";
         }
     }
 }
