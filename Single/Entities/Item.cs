@@ -10,6 +10,10 @@ namespace Single.Entities
     {
         public Product Product { get; set; }
         public int Quantity { get; set; }
-        
+        public int DiscountRate { get; set; }
+        public decimal GetSubtotal()
+        {
+            return (Quantity * Product.Price) - (Quantity * Product.Price * DiscountRate / 100);
+        }
     }
 }

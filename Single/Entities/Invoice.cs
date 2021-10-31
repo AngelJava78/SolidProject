@@ -10,15 +10,14 @@ namespace Single.Entities
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
+        public Customer Customer { get; set; }
         public List<Item> Items { get; set; }
         public decimal GetTotal()
         {
             var total = 0.0m;
-            foreach(var item in Items)
+            foreach (var item in Items)
             {
-                total += item.Quantity * item.Product.Price;
+                total += item.GetSubtotal();
             }
             return total;
         }
