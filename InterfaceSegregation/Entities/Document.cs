@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace InterfaceSegregation.Entities
 {
-    public abstract class Document
+    public abstract class Document : IPrintable
     {
-        public Document(int id, DateTime date)
+        protected Document(int id, DateTime date)
         {
             Id = id;
             Date = date;
@@ -16,7 +16,5 @@ namespace InterfaceSegregation.Entities
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public abstract void Print();
-
-        public abstract void Send();
     }
 }

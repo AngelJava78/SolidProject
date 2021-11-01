@@ -15,7 +15,7 @@ namespace InterfaceSegregation
                 invoice.Send();
 
                 receipt.Print();
-                receipt.Send();
+                //receipt.Send(); // Sales receipt doesn't allow to send email
             }
             catch (Exception ex)
             {

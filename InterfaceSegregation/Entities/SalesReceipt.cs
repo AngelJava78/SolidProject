@@ -16,11 +16,5 @@ namespace InterfaceSegregation.Entities
         {
             Console.WriteLine($"Printing by email this sales receipt: {Id}. Date: {Date:dd-MM-yyyy hh:mm:ss}");
         }
-
-        public override void Send()
-        {
-            //throw new NotImplementedException();
-            throw new InvalidOperationException();
-        }
     }
 }

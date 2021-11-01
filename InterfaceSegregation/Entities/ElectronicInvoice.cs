@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceSegregation.Entities
 {
-    public class ElectronicInvoice : Document
+    public class ElectronicInvoice : Document, ISendEmail
     {
         public ElectronicInvoice(int id, DateTime date) : base(id, date)
         {
@@ -17,7 +17,7 @@ namespace InterfaceSegregation.Entities
             Console.WriteLine($"Printing by email this electronic invoice: {Id}. Date: {Date:dd-MM-yyyy hh:mm:ss}");
         }
 
-        public override void Send()
+        public void Send()
         {
             Console.WriteLine($"Sending by email this electronic invoice: {Id}. Date: {Date:dd-MM-yyyy hh:mm:ss}");
         }
