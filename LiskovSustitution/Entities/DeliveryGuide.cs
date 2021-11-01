@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace LiskovSustitution.Entities
 {
-    public class DeliveryGuide : Document
+    public class DeliveryGuide 
     {
-        public DeliveryGuide(int id, DateTime date, int quantity) : base(id, date)
+        public DeliveryGuide(int id, DateTime date, int quantity) 
         {
+            Id = id;
+            Date = date;
             Quantity = quantity;
-            acronym = "DG";
         }
-
+        public int Id { get; set; }
+        public DateTime Date { get; set; }
         public int Quantity { get; set; }
-        public override string GetDescription()
+        public string GetDescription()
         {
-            return $"{acronym}. Id: {Id}. Fecha: {Date:dd-MM-yyyy hh:mm:ss} with {Quantity} items.";
+            return $"Delivery guide: Id: {Id}. Fecha: {Date:dd-MM-yyyy hh:mm:ss} with {Quantity} items.";
         }
 
+        public string Print()
+        {
+            return $"Printing: {GetDescription()}";
+        }
     }
 }
