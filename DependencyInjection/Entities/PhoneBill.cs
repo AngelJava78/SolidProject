@@ -14,5 +14,9 @@ namespace DependencyInjection.Entities
         }
         public string PaymentCodeBar { get; set; }
 
+        public override void Print()
+        {
+            Console.WriteLine($"Printing phone bill: {PaymentCodeBar}. Amount: {Amount:c}");
+        }
     }
 }

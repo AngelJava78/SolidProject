@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.Entities
 {
-    public abstract class TaxReceipt
+    public abstract class TaxReceipt: IPrintable
     {
         protected TaxReceipt(decimal amount)
         {
             Amount = amount;
         }
         public decimal Amount { get; set; }
+
+        public abstract void Print();
+       
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.Entities
 {
-    public abstract class AccountingDocument 
+    public abstract class AccountingDocument : IPrintable
     {
         protected string acronym;
         protected AccountingDocument(int id, DateTime date, decimal amount)
@@ -20,6 +20,6 @@ namespace DependencyInjection.Entities
         public DateTime Date { get; set; }
         public decimal Amount { get; set; }
         public abstract decimal GetTotal();
-
+        public abstract void Print();
     }
 }

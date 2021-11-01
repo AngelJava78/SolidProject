@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.Entities
 {
-    public class Payslip 
+    public class Payslip : IPrintable
     {
         public Payslip(int employeeId, decimal total)
         {
@@ -16,5 +16,10 @@ namespace DependencyInjection.Entities
         }
         public int EmployeeId { get; set; }
         public decimal Total { get; set; }
+
+        public void Print()
+        {
+            Console.WriteLine($"Printing payslip: {EmployeeId}. Amount: {Total:c}");
+        }
     }
 }

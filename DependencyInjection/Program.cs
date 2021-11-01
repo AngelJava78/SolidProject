@@ -13,13 +13,14 @@ namespace DependencyInjection
             var guide = new DeliveryGuide(10823, DateTime.Now, 7);
             var electricalBill = new ElectricalBill(531.68m, "ABC-123");
             var phoneBill = new PhoneBill(599.99m, "57020091");
-
+            var collectionDocument = new CollectionDocument { Id = 9352, Amount = 99.99m, Date = DateTime.Now };
             var printer = new Printer();
             printer.Print(invoice);
             printer.Print(creditNote);
             printer.Print(guide);
             printer.Print(electricalBill);
             printer.Print(phoneBill);
+            printer.Print(collectionDocument);
         }
     }
 }

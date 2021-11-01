@@ -17,5 +17,10 @@ namespace DependencyInjection.Entities
         {
             return Amount * 1.21m * -1;
         }
+
+        public override void Print()
+        {
+            Console.WriteLine($"Printing credit note: {Id}. Date: {Date:dd-MM-yyyy hh:mm:ss}. Total: {GetTotal():c}");
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.Entities
 {
-    public class DeliveryGuide
+    public class DeliveryGuide: IPrintable
     {
         public DeliveryGuide(int id, DateTime date, int quantity)
         {
@@ -18,5 +18,10 @@ namespace DependencyInjection.Entities
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public int Quantity { get; set; }
+
+        public void Print()
+        {
+            Console.WriteLine($"Printing delivery guide: {Id}. Date: {Date:dd-MM-yyyy hh:mm:ss}. Quantity: {Quantity}");
+        }
     }
 }

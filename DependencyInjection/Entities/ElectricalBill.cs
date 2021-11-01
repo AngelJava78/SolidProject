@@ -13,5 +13,10 @@ namespace DependencyInjection.Entities
             PaymentCode = paymentCode;
         }
         public string PaymentCode { get; set; }
+
+        public override void Print()
+        {
+            Console.WriteLine($"Printing electrical bill: {PaymentCode}. Amount: {Amount:c}");
+        }
     }
 }
